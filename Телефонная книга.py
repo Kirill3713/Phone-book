@@ -9,8 +9,6 @@ colorama.init()
 green = colorama.Fore.GREEN
 red = colorama.Fore.RED
 white = colorama.Fore.WHITE
-black = colorama.Fore.BLACK
-cyan = colorama.Fore.CYAN
 reset = colorama.Fore.RESET
 
 # Очищаем экран
@@ -35,7 +33,7 @@ for i in range(1):
             phone = line[1].strip()
             book_phones[name] = phone
     else:
-        #  Создаем новую книгу
+        # Создаем новую книгу
         choice = input("Ваша телефонная книга удалена, чтобы создать новый контакт нажмите 1: ")
         if choice == "1":
             # Новый номер и контакт
@@ -209,10 +207,10 @@ while action != "Exit" and action != "exit":
             json.dump(data_dict, file, ensure_ascii = False)
     # Такого действия нет
     else:
-        print("Такого действия нет.")    
-        print("Допустимые команды: 1, 2, 3, 4, 5, 6, 7, 8, 9, Exit. Попробуйте, пожалуйста еще раз!")   
+        print("Такого действия нет.")
+        print("Допустимые команды: 1, 2, 3, 4, 5, 6, 7, 8, 9, Exit. Попробуйте, пожалуйста еще раз!")
     
-    action = input("Введите нужное значение:\n1 — показать, 2 — добавить, 3 — изменить, 4 — удалить, 5 — показать все имена в книге, 6 — показать все номера в книге, 7 - вывести теленфонную книгу полностью, 8 - проверить дни рождения, 9 - очистить всю книгу, Exit - выйти из программы.\n")
+    action = input(white + "Введите нужное значение:\n1 — показать, 2 — добавить, 3 — изменить, 4 — удалить, 5 — показать все имена в книге, 6 — показать все номера в книге, 7 - вывести теленфонную книгу полностью, 8 - проверить дни рождения, 9 - очистить всю книгу, Exit - выйти из программы.\n" + reset)
     os.system("cls")
 # Сохраняем книгу в файле
     with open('Телефонная книга.txt', 'w', encoding = 'utf-8') as file:
@@ -222,4 +220,4 @@ while action != "Exit" and action != "exit":
     with open('Data.json', 'w', encoding = 'utf-8') as file:
         json.dump(data_dict, file, ensure_ascii = False)
 os.system("cls")
-print('Спасибо за использование нашей программы! Ваша книга сохранена в файле "Телефонная книга.txt".')
+print(white + 'Спасибо за использование нашей программы! Ваша книга сохранена в файле "Телефонная книга.txt".' + reset)
